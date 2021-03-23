@@ -3,13 +3,13 @@
         <h2>Edytuj produkt</h2>
         <div>
             <label for="name">Nazwa</label>
-            <input type="text" name="name" id="name" [(ngModel)]="nameProduct">
+            <input type="text" name="name" id="name" [value]="activeProduct.name" #refNameProduct>
         </div>
         <div>
-            <input type="checkbox" id="inStock" name="inStock" [(ngModel)]="inStock" #refInStock>
+            <input type="checkbox" id="inStock" name="inStock" [checked]="activeProduct.inStock" #refInStock>
             <label for="inStock">Dostępność</label><br>
         </div>
-        <button (click)="editProduct()" type="submit">Dodaj</button>
+        <button (click)="editProduct(refNameProduct.value, refInStock)" type="submit">Dodaj</button>
         <button (click)="changeVisible()">Wyjdz</button>
 
     </div>

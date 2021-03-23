@@ -32,7 +32,7 @@ export class HttpService {
 
   // PUT
   updateProduct(product: Product): Observable<Product> {
-    return this.http.put<Product>(this.URL_ADDRESS, product)
+    return this.http.put<Product>(`${this.URL_ADDRESS}${product.id}`, product)
   }
 
   // DELETE

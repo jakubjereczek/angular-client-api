@@ -31,7 +31,7 @@
             <td> {{product.id}}</td>
             <td> {{product.name}}</td>
             <td> {{product.inStock ? "Dostępny" : "Niedostępny"}}</td>
-            <td><button (click)="editProductPopupVisible = true">Edycja</button></td>
+            <td><button (click)="selectActive(product); editProductPopupVisible = true">Edycja</button></td>
             <td><button (click)="deleteProduct(product); ">Usuń</button></td>
           </tr>
         </ng-container>
@@ -45,5 +45,5 @@
 </ng-container>
 
 <ng-container *ngIf="editProductPopupVisible === true">
-  <app-edit-product (changeVisibilityEdit)="changeVisibleEdit()"></app-edit-product>
+  <app-edit-product [activeProduct]="activeProduct" (changeVisibilityEdit)="changeVisibleEdit()"></app-edit-product>
 </ng-container>
