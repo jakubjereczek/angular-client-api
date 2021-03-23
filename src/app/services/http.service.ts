@@ -37,7 +37,8 @@ export class HttpService {
 
   // DELETE
   deleteProduct(product: Product): Observable<Product> {
-    return this.http.delete<Product>(`${this.URL_ADDRESS}/+${product.Id}`);
+    console.log(product)
+    return this.http.delete<Product>(`${this.URL_ADDRESS}${product.id}`);
   }
 
 

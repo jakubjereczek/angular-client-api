@@ -1,0 +1,17 @@
+<div class="container_popup">
+    <div class="container_popup_inside">
+        <h2>Edytuj produkt</h2>
+        <div>
+            <label for="name">Nazwa</label>
+            <input type="text" name="name" id="name" [(ngModel)]="nameProduct">
+        </div>
+        <div>
+            <input type="checkbox" id="inStock" name="inStock" [(ngModel)]="inStock" #refInStock>
+            <label for="inStock">Dostępność</label><br>
+        </div>
+        <button (click)="editProduct()" type="submit">Dodaj</button>
+        <button (click)="changeVisible()">Wyjdz</button>
+
+    </div>
+
+</div>

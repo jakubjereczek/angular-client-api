@@ -1,7 +1,7 @@
 <div>
   <header>
     <p>Client </p>
-    <button>Dodaj</button>
+    <button (click)="addNewProductPopupVisible = true">Dodaj</button>
   </header>
   <main>
     <div class="details">
@@ -26,16 +26,24 @@
           <th>Edycja</th>
           <th>Usunięcie</th>
         </tr>
-        <ng-container *ngFor="let product of productsList">
+        <ng-container *ngFor="let product of productsList;">
           <tr (click)="selectActive(product)">
             <td> {{product.id}}</td>
             <td> {{product.name}}</td>
             <td> {{product.inStock ? "Dostępny" : "Niedostępny"}}</td>
-            <td><button>Edycja</button></td>
-            <td><button>Usuń</button></td>
+            <td><button (click)="editProductPopupVisible = true">Edycja</button></td>
+            <td><button (click)="deleteProduct(product); ">Usuń</button></td>
           </tr>
         </ng-container>
       </table>
     </div>
   </main>
 </div>
+
+<ng-container *ngIf="addNewProductPopupVisible === true">
+  <app-add-product (changeVisibility)="changeVisible()"></app-add-product>
+</ng-container>
+
+<ng-container *ngIf="editProductPopupVisible === true">
+  <app-edit-product (changeVisibilityEdit)="changeVisibleEdit()"></app-edit-product>
+</ng-container>

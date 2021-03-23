@@ -1,5 +1,5 @@
 export default interface Product {
-    Id: number,
+    id?: number,
     InStock: boolean,
     Name: string
 }
