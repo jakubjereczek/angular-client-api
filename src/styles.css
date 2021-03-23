@@ -19,8 +19,11 @@ body {
 }
 
 .container_popup_inside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 500px;
-    height: 500px;
+    height: auto;
     border: 2px solid tomato;
     border-radius: 10px;
     background-color: white;
@@ -30,5 +33,23 @@ body {
 .container_popup_inside h2 {
     padding-bottom: 10px;
     border-bottom: 1px solid tomato;
+}
 
+.container_popup_inside .buttons {
+    display: flex;
+    margin: 10px;
+}
+
+.container_popup_inside input {
+    margin: 5px 10px;
+    padding: 5px;
+}
+
+button {
+    width: 100px;
+    background-color: tomato;
+    border: 1px solid #222;
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: white;
 }

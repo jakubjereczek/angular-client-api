@@ -41,11 +41,3 @@ td:hover {
     background-color: tomato;
 }
 
-button {
-    width: 100px;
-    background-color: tomato;
-    border: 1px solid #222;
-    padding: 5px 10px;
-    border-radius: 10px;
-    color: white;
-}
