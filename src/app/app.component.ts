@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { ApplicationRef, ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { Product } from './models';
 import { HttpService } from './services/http.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   productsList = [];
@@ -21,7 +21,7 @@ export class AppComponent {
   getProducts() {
     this.httpService.getProducts().subscribe((products) => {
       console.log("new Data");
-      this.productsList = products.slice(); // Zmiana referencji - odswiezenie.
+      this.productsList = [...products]; // Zmiana referencji - odswiezenie.
       console.log(products)
     })
   }
@@ -46,7 +46,6 @@ export class AppComponent {
     this.editProductPopupVisible = !this.editProductPopupVisible;
     this.getProducts();
   }
-
 
 
 }

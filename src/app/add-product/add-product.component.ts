@@ -30,9 +30,10 @@ export class AddProductComponent implements OnInit {
       InStock: this.inStock,
     }
     this.httpService.addProduct(product).subscribe((product) => {
-      console.log(product);
+      console.log(product)
+      this.changeVisibility.emit();
+
     });
-    this.changeVisibility.emit();
 
   }
 

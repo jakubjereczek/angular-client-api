@@ -26,7 +26,7 @@
           <th>Edycja</th>
           <th>Usunięcie</th>
         </tr>
-        <ng-container *ngFor="let product of productsList;">
+        <ng-container *ngFor="let product of productsList">
           <tr (click)="selectActive(product)">
             <td> {{product.id}}</td>
             <td> {{product.name}}</td>

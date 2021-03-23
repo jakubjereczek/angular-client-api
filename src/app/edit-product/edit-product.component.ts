@@ -32,9 +32,9 @@ export class EditProductComponent implements OnInit {
     }
     this.httpService.updateProduct(product).subscribe((product) => {
       console.log("Produkt zaaktualizowany")
-    })
+      this.changeVisibilityEdit.emit();
 
-    this.changeVisibilityEdit.emit();
+    })
 
   }
 
