@@ -1,0 +1,40 @@
+.details {
+    padding: 10px;
+}
+
+p span {
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: black;
+}
+
+p {
+    color: tomato;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    height: 10vh;
+    max-height: 50px;
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    font-size: 1.5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 5px 0px;
+    text-align: center;
+}
+
+td:hover {
+    background-color: tomato;
+}
+
