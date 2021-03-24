@@ -1,45 +1,46 @@
-<div>
-  <header>
-    <p>Client </p>
-    <button (click)="addNewProductPopupVisible = true">Dodaj</button>
-  </header>
-  <main>
-    <div class="details">
-      <h2>Szczegóły wybranego produktu</h2>
-      <ng-container *ngIf="activeProduct !== null; else noSelectedItem">
-        <p><span>Id: </span>{{activeProduct?.id}}</p>
-        <p><span>Nazwa: </span>{{activeProduct?.name}}</p>
-        <p><span>Dostępność: </span>{{activeProduct?.inStock ? "Dostępny" : "Niedostępny"}}</p>
+<div class="site">
+  <div class="container">
+    <header>
+      <p>Client </p>
+      <button (click)="addNewProductPopupVisible = true">Dodaj</button>
+    </header>
+    <main>
+      <div class="details">
+        <h2>Szczegóły wybranego produktu</h2>
+        <ng-container *ngIf="activeProduct !== null; else noSelectedItem">
+          <p><span>Id: </span>{{activeProduct?.id}}</p>
+          <p><span>Nazwa: </span>{{activeProduct?.name}}</p>
+          <p><span>Dostępność: </span>{{activeProduct?.inStock ? "Dostępny" : "Niedostępny"}}</p>
 
-      </ng-container>
-
-      <ng-template #noSelectedItem>
-        <p>Nie wybrano produktu!:(</p>
-      </ng-template>
-    </div>
-    <div class="list">
-      <table>
-        <tr>
-          <th>Identyfikator</th>
-          <th>Nazwa</th>
-          <th>Dostepność</th>
-          <th>Edycja</th>
-          <th>Usunięcie</th>
-        </tr>
-        <ng-container *ngFor="let product of productsList">
-          <tr (click)="selectActive(product)">
-            <td> {{product.id}}</td>
-            <td> {{product.name}}</td>
-            <td> {{product.inStock ? "Dostępny" : "Niedostępny"}}</td>
-            <td><button (click)="selectActive(product); editProductPopupVisible = true">Edycja</button></td>
-            <td><button (click)="deleteProduct(product); ">Usuń</button></td>
-          </tr>
         </ng-container>
-      </table>
-    </div>
-  </main>
-</div>
 
+        <ng-template #noSelectedItem>
+          <p>Nie wybrano produktu!:(</p>
+        </ng-template>
+      </div>
+      <div class="list">
+        <table>
+          <tr>
+            <th>Identyfikator</th>
+            <th>Nazwa</th>
+            <th>Dostepność</th>
+            <th>Edycja</th>
+            <th>Usunięcie</th>
+          </tr>
+          <ng-container *ngFor="let product of productsList">
+            <tr (click)="selectActive(product)">
+              <td> {{product.id}}</td>
+              <td> {{product.name}}</td>
+              <td> {{product.inStock ? "Dostępny" : "Niedostępny"}}</td>
+              <td><button (click)="selectActive(product); editProductPopupVisible = true">Edycja</button></td>
+              <td><button (click)="deleteProduct(product); ">Usuń</button></td>
+            </tr>
+          </ng-container>
+        </table>
+      </div>
+    </main>
+  </div>
+</div>
 <ng-container *ngIf="addNewProductPopupVisible === true">
   <app-add-product (changeVisibility)="changeVisible()"></app-add-product>
 </ng-container>
